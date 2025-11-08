@@ -4,14 +4,28 @@ Small collection of command line tools written in Go.
 ## File commands
 
 ### Basic
-
-#### Files
 Lists files and directories
 ```
-$ la -la
+$ ls
+
+$ ls path/filename/directory
+```
+More content
+```
+$ ls -la 
 ```
 
-Counts then numbers of lines in a file.
+### Word Count
+Returns the number of lines in a file
 ```
 $ wc -l
 ```
+Returns the number of words in a file
+```
+$ wc -w
+```
+Returns the number of bytes in a file
+```
+$ wc -c
+```
+Returns the average count of 
