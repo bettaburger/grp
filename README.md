@@ -1,5 +1,5 @@
 # Overview
-Small collection of command line tools written in Go.
+Bash commands written with Go
 
 ## File commands
 
