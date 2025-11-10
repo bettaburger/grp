@@ -1,6 +1,9 @@
 # Overview
 Small collection of command line tools written in Go.
 
+## How to use
+
+
 ## File commands
 
 ### Basic
@@ -13,6 +16,14 @@ $ ls path/filename/directory
 More content
 ```
 $ ls -la 
+```
+Change directory
+```
+$ cd path/to/directory
+
+$ cd HOME/~/' '
+
+$ cd ..
 ```
 
 ### Word Count
