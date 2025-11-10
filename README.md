@@ -1,5 +1,5 @@
 # Overview
-Small collection of command line tools written in Go.
+Bash commands written with Go
 
 ## How to use
 
@@ -17,6 +17,7 @@ More content
 ```
 $ ls -la 
 ```
+<<<<<<< HEAD
 Change directory
 ```
 $ cd path/to/directory
@@ -24,6 +25,11 @@ $ cd path/to/directory
 $ cd HOME/~/' '
 
 $ cd ..
+=======
+Cat
+```
+$ cat filename
+>>>>>>> d1494ac199ddc8462b30291f9291c3a5d33cbb88
 ```
 
 ### Word Count
@@ -39,4 +45,4 @@ Returns the number of bytes in a file
 ```
 $ wc -c
 ```
-Returns the average count of 
+
