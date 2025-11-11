@@ -6,7 +6,7 @@ where the shell will run
 package main
 
 import (
-	"grp/src/shell"
+	"grp/internal/shell"
 )
 func main() {
 	shell.Run()
