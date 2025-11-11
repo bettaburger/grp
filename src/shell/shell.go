@@ -31,25 +31,12 @@ func Run() {
 		if err := scanner.Err(); err != nil {
 			fmt.Fprintln(os.Stderr, "error:", err)
 			os.Exit(1)
-    	}
-
-		// some problems with running file, clicking enter to run grp//fixed
-	 
-		arg := Parse(line, MAXARG)		// PARSE EACH LINE
-
-		fmt.Println(arg.cmd, arg.args)
-		/*for i, arg := range args {
-    		fmt.Printf("	printed: arg[%d] = %s\n", i, arg)
-		}*/
-
-		// exit command
-		if (line == "exit") {						
-			fmt.Printf("	>>exiting grp shell<<\n")
-			break
-		}
-
-		//Execute(line)
-
+    	} 
+		// PARSE EACH LINE
+		arg := Parse(line, MAXARG)		//fmt.Printf("	%s	%s	\n",arg.cmd, arg.args)
+		
+		// calling execute
+		Execute(arg.cmd)
 	}
 	
 
