@@ -7,7 +7,7 @@ import (
 )
 
 type Command struct {
-	cmd 	[]string
+	cmd 	string
 	args 	[]string
 }
 
@@ -32,7 +32,7 @@ func Parse(line string, maxarg int) *Command {
 	}
 	// initialize Commands
 	var cmdArg Command
-	cmdArg.cmd = tokens[:1]
+	cmdArg.cmd = tokens[0]
 	cmdArg.args = tokens[1:]
 
 	return &cmdArg
