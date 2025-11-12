@@ -1,5 +1,5 @@
 # Overview
-Bash commands written with Go
+mini bash written in go
 
 ## How to use
 Clone the repository
