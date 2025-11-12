@@ -5,12 +5,6 @@ import (
 	"fmt"
 	"os"
 	"strings"
-
-	"github.com/pborman/getopt/v2"
-)
-
-var (
-	debug int
 )
 
 //accepts up to 100 arguments
@@ -20,7 +14,7 @@ const MAXARG int = 100
 func Run() {
 	scanner := bufio.NewScanner(os.Stdin)
 
-	for ((true)) {
+	for {
 		fmt.Printf("grp$ ")
 
 		if !scanner.Scan() {
@@ -32,36 +26,13 @@ func Run() {
 			fmt.Fprintln(os.Stderr, "error:", err)
 			os.Exit(1)
     	} 
-		// PARSE EACH LINE
+		// PARSE EACH LINE into arg
 		arg := Parse(line, MAXARG)		//fmt.Printf("	%s	%s	\n",arg.cmd, arg.args)
-		
+		// exit command
+		if arg.cmd == "exit" {
+			break
+		}
 		// calling execute
-		Execute(arg.cmd)
+		Execute(arg.cmd, line)
 	}
-	
-
-	/* DEBUGGER 
-		run: $ -d
-	*/
-	dFlag := getopt.Bool('d', "enable debug")	// -d debug
-	// parse the arguments
-	getopt.ParseV2()
-	
-	switch {
-	case *dFlag:
-		debug = 1
-		fmt.Println("Debug enabled")	
-	default:
-		getopt.Usage()	
-	}
-	
-	// test case for debug
-	for debug == 1 {
-		fmt.Println("hello this debug is 1")
-		break;
-	}
-
-
-
-
 }
