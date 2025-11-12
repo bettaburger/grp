@@ -20,6 +20,7 @@ $ go run main.go
 ```$ env ```
 ```$ setenv ```
 ```$ getenv ```
+```$ unsetenv ```
 
 ## Basic
 Lists files and directories
