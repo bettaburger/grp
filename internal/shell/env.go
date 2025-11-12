@@ -3,21 +3,47 @@ package shell
 import (
 	"os"
 	"fmt"
+	"strings"
+	"grp/pkg/compare"
+)
+
+var (
+	env []string = os.Environ()		// list of environments
 )
 
 /*ENVP FOR PATHING*/
 type Envp struct {
-	Name 	string
-	Var 	[]string 
+	Variable 	string		// key
+	Value 	[]string	// value
 }
 /*ENVIRONMENT FUNCTION
-	Environment variables
-	Can display the name and variable(s)
+	temporary
+	move this to execv.go, initialize env 
 */
-func Environment() {
-	env := os.Environ() // returns []string of "key=value"
-	for _, e := range env {
-		fmt.Println(e)
+func Env() {
+	for i, e := range env {
+		fmt.Println(i, "| ", e)
 	}
-	fmt.Printf("\n%d env variables\n", len(env))
+}
+
+/* RETRIEVES ENVIRONMENT */
+func GetEnv(key string) {
+	var found int
+	for _, e := range env {
+		variables := strings.Split(e, "=")
+		// if key is found, print the environment
+		if compare.StrCmp(key, variables[0]) == 0 {
+			found = 1
+			fmt.Printf("%s\n", e) 
+		} 
+	}
+	if found == 0 {
+		fmt.Printf("%s environment not found\n", key)
+	}
+}
+
+/*UPDATES ENVIRONMENT
+	takes a key and changes the variables 
+*/
+func setEnv(key string, variable string) {
 }
