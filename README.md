@@ -6,7 +6,7 @@ Bash commands written with Go
 
 ## File commands
 
-### Basic
+## Basic
 Lists files and directories
 ```
 $ ls
@@ -17,7 +17,6 @@ More content
 ```
 $ ls -la 
 ```
-<<<<<<< HEAD
 Change directory
 ```
 $ cd path/to/directory
