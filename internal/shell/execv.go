@@ -2,10 +2,13 @@ package shell
 
 import (
 	"fmt"
-
+	"strings"
 	"grp/pkg/compare"
 	"grp/pkg/debug"	
 )
+/*in future, move similar commands to its own folder? reduces flow of if statements? :p
+	maybe keywords such as a command's first letter or something similar. 
+*/
 
 /*EXECUTE FUNCTION
 	if statements for commands
@@ -27,7 +30,14 @@ func Execute(command string, line string) {
 			break
 		// env command
 		} else if compare.StrCmp(command, "env") == 0{
-			Environment()
+			// prints all environment variables
+			Env()
+			break
+		// getenv command
+		} else if compare.StrCmp(command, "getenv") == 0 {
+			// gets the environment
+			args := strings.Fields(line)
+			GetEnv(args[1])
 			break
 		// unidentified command
 		} else {
