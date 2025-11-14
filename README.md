@@ -1,12 +1,28 @@
 # Overview
-Bash commands written with Go
+A shell program with a few commands written in Go
 
 ## How to use
+Clone the repository
+```
+$ git clone <https://github.com/bettaburger/grp>
+```
+Cd to the path
+```
+$ cd path/to/grp/cmd
+```
+Run the program
+```
+$ go run main.go
+```
 
+## Environment
 
-## File commands
+```$ env ```
+```$ setenv ```
+```$ getenv ```
+```$ unsetenv ```
 
-### Basic
+## Basic
 Lists files and directories
 ```
 $ ls
@@ -17,32 +33,5 @@ More content
 ```
 $ ls -la 
 ```
-<<<<<<< HEAD
-Change directory
-```
-$ cd path/to/directory
 
-$ cd HOME/~/' '
-
-$ cd ..
-=======
-Cat
-```
-$ cat filename
->>>>>>> d1494ac199ddc8462b30291f9291c3a5d33cbb88
-```
-
-### Word Count
-Returns the number of lines in a file
-```
-$ wc -l
-```
-Returns the number of words in a file
-```
-$ wc -w
-```
-Returns the number of bytes in a file
-```
-$ wc -c
-```
 
