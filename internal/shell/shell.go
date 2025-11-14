@@ -15,7 +15,8 @@ func Run() {
 	scanner := bufio.NewScanner(os.Stdin)
 
 	for {
-		fmt.Printf("grp$ ")
+		dir, _ := os.Getwd()
+		fmt.Printf("grp:%s$ ", dir)
 
 		if !scanner.Scan() {
 			break
