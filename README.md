@@ -14,6 +14,10 @@ Run the program
 ```
 $ go run main.go
 ```
+With Taskfile
+```
+$ task
+```
 
 ## Environment
 
