@@ -24,20 +24,11 @@ var (
 func Execute(command string, line string) {
 	args := strings.Fields(line)
 	for {
-		// ls command
-		if compare.StrCmp(command, "ls") == 0 {
-			// call ls command from CMDS here
-			fmt.Printf("	run ls here..\n")
-			break
 		// grp help command
-		} else if compare.StrCmp(line, "grp help") == 0 {
+		if compare.StrCmp(line, "grp help") == 0 {
 			debug.HelperList()
 			break
-		// echo command
-		} else if compare.StrCmp(command, "echo") == 0 {
-			fmt.Printf("	run echo here..\n")
-			break
-
+		
 /*PATHING COMMANDS*/
 		// pwd command
 		} else if compare.StrCmp(command, "pwd") == 0 {
@@ -53,6 +44,7 @@ func Execute(command string, line string) {
 			if len(args) > 1 {
 				target = args[1]
 			}
+			// otherwise go to the targeted directory 
 			cmds.ChangeDir(target)
 			break
 		} else if compare.StrCmp(command, "cd ~") == 0 {
@@ -85,6 +77,27 @@ func Execute(command string, line string) {
 			env.UnsetEnv(key)
 			//fmt.Println(len(env)) //==> checks to see if the env array is getting decremented by every unset
 			break
+
+/*LS COMMANDS*/
+		} else if compare.StrCmp(command, "ls") == 0 {	
+			target := "." 
+			if len(args) > 1 {
+				target = args[1] 
+			}
+			// otherwise go to the targeted directory 
+			cmds.List(target)
+			break
+
+		} else if compare.StrCmp(command, "ls ~") == 0 {
+			cmds.List("~")
+
+		} else if compare.StrCmp(command, "ls $HOME") == 0 {
+			cmds.List("$HOME")
+
+/*FILE COMMANDS*/
+		} else if compare.StrCmp(command, "cat") == 0 {
+			break
+		
 
 /*IF IT IS NOT A COMMAND*/
 		} else {
