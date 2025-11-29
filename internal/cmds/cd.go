@@ -28,16 +28,21 @@ func ChangeDir(target string) {
 	currPath := PWD()
 	
 	homeVar := env.GetEnv("HOME")
+	// HOME VARIABLE
 	home := strings.Split(homeVar, "=")
 
+	// HOME VALUE
 	path := home[1]
 
+	// MANAGE TARGET
 	switch target {
 	case "", "~", "$HOME":
 		target = path
+		// parent directory
 	case "..":
 		target = filepath.Dir(currPath)
 	default:
+		// if target starts with ~, it is a home path
 		if strings.HasPrefix(target, "~") {
 			target = strings.Replace(target, "~", path, 1)
 		}
@@ -46,7 +51,8 @@ func ChangeDir(target string) {
 			target = filepath.Join(currPath, target)
 		}
 	}
-	// Try changing directory
+
+	// Changes directory
 	if err := os.Chdir(target); err != nil {
 		fmt.Printf("no such file or directory\n")
 		return
