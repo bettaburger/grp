@@ -18,7 +18,7 @@ With Taskfile
 ```
 $ task
 ```
-
+## Commands
 ## Environment
 
 ```$ env ```
@@ -26,13 +26,13 @@ $ task
 ```$ getenv ```
 ```$ unsetenv ```
 
-# Change Directory
+## Change Directory
 ```$ cd ```
 ```$ cd $HOME/~/ ```
 ```$ cd .. ```
 ```$ cd path/to ```
 
-# ls 
+## ls 
 ```$ ls \```
 ```$ ls . ```
 ```$ ls path/to/ ```
