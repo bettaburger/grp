@@ -18,7 +18,12 @@ With Taskfile
 ```
 $ task
 ```
-## Commands
+
+# Commands
+```
+$ grp help
+```
+
 ## Environment
 
 ```$ env ```
