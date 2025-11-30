@@ -26,16 +26,18 @@ $ task
 ```$ getenv ```
 ```$ unsetenv ```
 
-## Basic
-Lists files and directories
-```
-$ ls
+# Change Directory
+```$ cd ```
+```$ cd $HOME/~/ ```
+```$ cd .. ```
+```$ cd path/to ```
 
-$ ls path/filename/directory
-```
-More content
-```
-$ ls -la 
-```
+# ls 
+```$ ls \```
+```$ ls . ```
+```$ ls path/to/ ```
+
+
+
 
 
